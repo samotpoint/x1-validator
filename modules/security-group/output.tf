@@ -1,0 +1,3 @@
+output "default_id" {
+  value = aws_security_group.default.id
+}

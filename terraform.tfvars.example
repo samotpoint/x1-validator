@@ -1,0 +1,23 @@
+####################################################################################
+# Update accordingly
+aws_account_id       = "replace_with_your_aws_account_id"
+whitelist_cidr_block = ["<replace_with_your_public_ip>/32"]
+
+####################################################################################
+# Only edit bellow this point if you know what you are doing...
+# If you change the instance_type or the AWS region you may need to update the ami.
+namespace         = "xen"
+environment       = "prod"
+service_name      = "go-x1"
+ssh_key_pair_path = "secrets" # Directory name where the ssh pub/secret key will be saved
+
+# AWS
+region            = "us-east-1"
+availability_zone = "us-east-1a"
+vpc_cidr_block    = "10.0.0.0/16"
+
+# AWS EC2
+instance_ami         = "ami-0a55ba1c20b74fc30" # Ubuntu Server 22.04 LTS (HVM), SSD Volume Type (64-bit (Arm))
+instance_type        = "c7gn.2xlarge"
+instance_volume_size = 1024
+instance_volume_type = "gp3" # gp3 (minimum requirement), gp2 (not good enough) for io1, io2 some changes are required
